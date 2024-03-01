@@ -40,7 +40,7 @@ class gamesController{
 
         const database = await sqliteConnection();
 
-        const row = database.get(`SELECT * FROM games WHERE id = (?)`, [id])
+        const row = await database.get(`SELECT * FROM games WHERE id = (?)`, [id])
         console.log(id)
         return res.json(row);
     }
